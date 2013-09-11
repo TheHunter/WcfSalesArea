@@ -10,7 +10,7 @@ using NHibernate.Criterion;
 using NHibernate.Impl;
 using PersistentLayer;
 using PersistentLayer.Domain;
-using PersistentLayer.NHibernate;
+using PersistentLayer.NHibernate; 
 using PersistentLayer.NHibernate.WCF;
 using Autofac;
 
