@@ -1,0 +1,65 @@
+Release notes:
+
+This version contains some new implementations which serve into WCF contexts, so in a few words contains two importan classes,
+and these ones serve for binding the ISessionFactory whenever an operation contract is called.
+
+Look at this Example:
+
+[ServiceContract]
+public interface IMyService
+{
+	[OperationContract]
+	int MyOperationContract();
+}
+
+[NhServiceBehavior("DefaultSessionFactory", typeof(WcfServiceHolder))]
+public class MyService : IMyService
+{
+
+	public int MyOperationContract()
+	{
+		int i;
+		//.......
+		
+		return i; 
+	}
+}
+
+
+public static class WcfServiceHolder
+{
+	private static readonly ISessionFactory Sessionfactory;
+	
+	static WcfServiceHolder()
+	{
+		/*
+		in this section, you have to prepare the ISessionFactory for your services..
+		*/
+	}
+	
+	public static ISessionFactory DefaultSessionFactory
+	{
+		get
+		{
+			return Sessionfactory;
+		}
+	}
+}
+
+///////////////////////////////////////////////////
+The NhServiceBehaviorAttribute class is used for binding / unbinding session whenever an OperationContract is called..
+through the constructor parameters, which the first one is the name property for class which returns the ISessionFactory,
+and the second one is the class which contains the property just indicated.
+
+
+Finally, there are another firmware for DAOs top interfaces, this new methods are:
+
+	IPagedResult<TEntity> GetIndexPagedResult<TEntity>(int pageIndex, int pageSize, IQueryable<TEntity> query);
+	
+	IPagedResult<TEntity> GetIndexPagedResult<TEntity>(int pageIndex, int pageSize, DetachedCriteria criteria)
+            where TEntity : class;
+			
+	IPagedResult<TEntity> GetIndexPagedResult<TEntity>(int pageIndex, int pageSize, QueryOver<TEntity> query)
+            where TEntity : class;
+			
+These ones are similar to GetPagedResult(*, *, *), but the difference is you pass the index of page for the result that you want.
