@@ -1,5 +1,0 @@
-Release Notes:
-
-1)	A new generic interface was added named IEntity<TKey>.
-2)	The abstract class BaseEntity<TKey> inherits IEntity<TKey>.
-3)	The IObservable<TKey> interface inherits IEntity<TKey>.

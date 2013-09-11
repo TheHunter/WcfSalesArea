@@ -90,34 +90,26 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cfg\Configuration.xml" />
+    <Content Include="cfg\Configuration.xml" />
     <Content Include="db\SalesArea.mdf" />
     <Content Include="db\SalesArea_log.ldf">
       <DependentUpon>SalesArea.mdf</DependentUpon>
     </Content>
-    <Content Include="EntityModel.license.txt" />
-    <Content Include="EntityModel.readme.html" />
-    <Content Include="MappingsXml\Agency.hbm.xml" />
-    <Content Include="MappingsXml\ClsToImport.hbm.xml" />
-    <Content Include="MappingsXml\Comune.hbm.xml" />
-    <Content Include="MappingsXml\NumEntity.hbm.xml" />
-    <Content Include="MappingsXml\Salesman.hbm.xml" />
-    <Content Include="MappingsXml\SalesmanNick.hbm.xml" />
-    <Content Include="MappingsXml\SalesmanNQ.hbm.xml" />
-    <Content Include="MappingsXml\Student.hbm.xml" />
-    <Content Include="MappingsXml\TradeContract.hbm.xml" />
-    <Content Include="PersistentLayer.license.txt" />
-    <Content Include="PersistentLayer.readme.html" />
-    <Content Include="Release_3-2-1-12.txt" />
-    <Content Include="Release_notes.txt" />
+    <Content Include="hbm\Agency.hbm.xml" />
+    <Content Include="hbm\ClsToImport.hbm.xml" />
+    <Content Include="hbm\Comune.hbm.xml" />
+    <Content Include="hbm\NumEntity.hbm.xml" />
+    <Content Include="hbm\Salesman.hbm.xml" />
+    <Content Include="hbm\SalesmanNick.hbm.xml" />
+    <Content Include="hbm\SalesmanNQ.hbm.xml" />
+    <Content Include="hbm\Student.hbm.xml" />
+    <Content Include="hbm\TradeContract.hbm.xml" />
     <Content Include="SalesService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JsonDataContractFormatAttribute.cs" />
-    <Compile Include="JsonSerializerOperationBehavior.cs" />
     <Compile Include="WcfServiceHolder.cs" />
     <Content Include="App_Code\AppStart.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -133,7 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Json\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
