@@ -35,7 +35,7 @@ namespace WcfSalesArea
             builder.Register(n => new SalesService(n.Resolve<INhPagedDAO>()))
                 .As<ISalesService>();
 
-            AutofacHostFactory.Container = builder.Build(ContainerBuildOptions.Default);
+            AutofacHostFactory.Container = builder.Build();
 
         }
 

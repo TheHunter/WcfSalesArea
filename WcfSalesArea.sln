@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CB1AFE
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfSalesArea.net40", "WcfSalesArea.net40\WcfSalesArea.net40.csproj", "{DBFDA64E-C076-4403-B82A-E3429DB10E96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{4302A61B-9318-4D5C-83E7-F1CA1E779648}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4302A61B-9318-4D5C-83E7-F1CA1E779648}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4302A61B-9318-4D5C-83E7-F1CA1E779648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBFDA64E-C076-4403-B82A-E3429DB10E96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBFDA64E-C076-4403-B82A-E3429DB10E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBFDA64E-C076-4403-B82A-E3429DB10E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBFDA64E-C076-4403-B82A-E3429DB10E96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
