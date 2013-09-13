@@ -63,8 +63,9 @@
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="PersistentLayer">
-      <HintPath>..\packages\PersistentLayer.3.2.1.12\lib\net35\PersistentLayer.dll</HintPath>
+    <Reference Include="PersistentLayer, Version=3.3.3.15, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PersistentLayer.3.3.3.15\lib\net35\PersistentLayer.dll</HintPath>
     </Reference>
     <Reference Include="PersistentLayer.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -102,6 +103,9 @@
     <Content Include="hbm\SalesmanNQ.hbm.xml" />
     <Content Include="hbm\Student.hbm.xml" />
     <Content Include="hbm\TradeContract.hbm.xml" />
+    <Content Include="PersistentLayer.license.txt" />
+    <Content Include="PersistentLayer.readme.html" />
+    <Content Include="Release_3-3-3-15.txt" />
     <Content Include="rif\EntityModel.dll" />
     <Content Include="rif\PersistentLayer.Domain.dll" />
     <Content Include="SalesService.svc" />
