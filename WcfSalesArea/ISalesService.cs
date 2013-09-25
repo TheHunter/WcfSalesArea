@@ -13,10 +13,12 @@ namespace WcfSalesArea
     [ServiceKnownType("GetKnownTypes", typeof(WcfServiceHolder))]
     public interface ISalesService
     {
-        [OperationContract]
+        //[OperationContract]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest), OperationContract]
         IEnumerable<Salesman> GetSalesman(int pageIndex, int pageSize);
 
-        [OperationContract]
+        //[OperationContract]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest), OperationContract]
         IEnumerable<TradeContract> GetContract(int pageIndex, int pageSize);
     }
 }

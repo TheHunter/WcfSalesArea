@@ -60,6 +60,10 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.3.3.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>rif\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
@@ -87,6 +91,10 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WcfJsonFormatter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>rif\WcfJsonFormatter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="cfg\Configuration.xml" />
@@ -107,7 +115,9 @@
     <Content Include="PersistentLayer.readme.html" />
     <Content Include="Release_3-3-3-15.txt" />
     <Content Include="rif\EntityModel.dll" />
+    <Content Include="rif\Newtonsoft.Json.dll" />
     <Content Include="rif\PersistentLayer.Domain.dll" />
+    <Content Include="rif\WcfJsonFormatter.dll" />
     <Content Include="SalesService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
