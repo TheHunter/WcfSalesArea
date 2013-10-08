@@ -137,6 +137,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\WcfExtensions\WcfExtensions\WcfExtensions.csproj">
+      <Project>{4cd6e1bf-5fe5-4c81-8396-29c87fd4ad25}</Project>
+      <Name>WcfExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\WcfJsonFormatter\WcfJsonFormatter.net40\WcfJsonFormatter.net40.csproj">
       <Project>{b8dffbe3-36aa-4aa4-881d-0f2ebf53094d}</Project>
       <Name>WcfJsonFormatter.net40</Name>

@@ -16,7 +16,7 @@ using Autofac;
 
 namespace WcfSalesArea
 {
-    [NhServiceBehavior("DefaultSessionFactory", typeof(WcfServiceHolder))]
+    //[NhServiceBehavior("DefaultSessionFactory", typeof(WcfServiceHolder))]
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class SalesService : ISalesService
     {
@@ -44,7 +44,6 @@ namespace WcfSalesArea
                              .GetIndexPagedResult<Salesman>(pageIndex, pageSize, DetachedCriteria.For<Salesman>());
 
             return result.GetResult();
-            
         }
 
         /// <summary>

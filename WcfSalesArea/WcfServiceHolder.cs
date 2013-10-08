@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Hosting;
 using System.Xml;
 using NHibernate;
+using NHibernate.Context;
 using PersistentLayer.Domain;
 using PersistentLayer.NHibernate;
 
@@ -69,6 +70,31 @@ namespace WcfSalesArea
         public static IEnumerable<Type> GetKnownTypes(ICustomAttributeProvider provider)
         {
             return KnownTypes;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void BindSession()
+        {
+            lock (Sessionfactory)
+            {
+                ISession session = Sessionfactory.OpenSession();
+                CurrentSessionContext.Bind(session);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void UnbindSession()
+        {
+            lock (Sessionfactory)
+            {
+                ISession session = CurrentSessionContext.Unbind(Sessionfactory);
+                if (session != null && session.IsOpen)
+                    session.Close();
+            }
         }
 
     }
