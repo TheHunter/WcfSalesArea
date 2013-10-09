@@ -88,6 +88,10 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WcfExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WcfConfigExtensions.1.0.0.0\lib\net40\WcfExtensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="cfg\Configuration.xml" />
@@ -137,10 +141,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\WcfExtensions\WcfExtensions\WcfExtensions.csproj">
-      <Project>{4cd6e1bf-5fe5-4c81-8396-29c87fd4ad25}</Project>
-      <Name>WcfExtensions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\WcfJsonFormatter\WcfJsonFormatter.net40\WcfJsonFormatter.net40.csproj">
       <Project>{b8dffbe3-36aa-4aa4-881d-0f2ebf53094d}</Project>
       <Name>WcfJsonFormatter.net40</Name>

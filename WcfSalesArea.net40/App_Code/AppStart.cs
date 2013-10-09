@@ -14,6 +14,8 @@ using PersistentLayer;
 using PersistentLayer.Domain;
 using PersistentLayer.NHibernate;
 using PersistentLayer.NHibernate.Impl;
+using WcfExtensions.Configuration;
+using WcfJsonFormatter;
 
 namespace WcfSalesArea
 {
@@ -36,7 +38,6 @@ namespace WcfSalesArea
                 .As<ISalesService>();
 
             AutofacHostFactory.Container = builder.Build();
-
         }
 
     }

@@ -13,11 +13,12 @@ using PersistentLayer.Domain;
 using PersistentLayer.NHibernate; 
 using PersistentLayer.NHibernate.WCF;
 using Autofac;
+using WcfExtensions;
 
 namespace WcfSalesArea
 {
-    //[NhServiceBehavior("DefaultSessionFactory", typeof(WcfServiceHolder))]
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    //[ActionServiceBehavior(typeof(WcfServiceHolder), "BindSession", "UnbindSession")]
     public class SalesService : ISalesService
     {
 
