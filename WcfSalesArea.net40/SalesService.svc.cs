@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 using Autofac.Integration.Wcf;
@@ -18,7 +19,8 @@ using WcfExtensions;
 namespace WcfSalesArea
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
-    //[ActionServiceBehavior(typeof(WcfServiceHolder), "BindSession", "UnbindSession")]
+    [AspNetCompatibilityRequirements(RequirementsMode =
+        AspNetCompatibilityRequirementsMode.Allowed)]
     public class SalesService : ISalesService
     {
 
@@ -31,6 +33,12 @@ namespace WcfSalesArea
         public SalesService(INhPagedDAO customPagedDAO)
         {
             this.customPagedDAO = customPagedDAO;
+        }
+
+        
+        public Agency GetAgency(long id)
+        {
+            return this.customPagedDAO.FindBy<Agency, long>(id);
         }
 
         /// <summary>

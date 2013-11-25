@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <title>My second page</title>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.js"></script>
+
+    <script type="text/javascript" src="scripts/json2.js"></script>
+    
+    <script type="text/javascript">
+        $(function () {
+            $("#formSubmit").click(function () {
+
+                var urlAgency = "http://localhost:52696/SalesService.svc/json/GetAgency";
+                var key = $("#key").val();
+                var input = JSON.stringify({ id: key });
+
+                //alert(input);
+                //dataType: "json",
+                //contentType: "application/json; charset=utf-8",
+                //mimeType: "application/json; charset=utf-8",
+
+                $.ajax({
+                    type: "POST",
+                    async: "false",
+                    url: urlAgency,
+                    data: input,
+                    crossDomain: true,
+                    mimeType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $("#debug").val("Added a new contact with id = " + result.ID);
+                    },
+                    error: function (jqXHR) {
+                        $("#debug").val("Error: " + jqXHR.responseText);
+                    },
+                    //error: function (xhr, ajaxOptions, thrownError) {
+                    //    $("#debug").val("Failed: " + xhr.status + " - " + thrownError);
+                    //},
+
+                    //beforeSend: function( xhr ) {
+                    //    xhr.overrideMimeType("application/json; charset=utf-8");
+                    //}
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1>Agency Info</h1>
+    <form id="AddContactForm">
+
+        <p>Identifier: <input type="text" id="key" /></p>
+        <p>Name: <input type="text" id="Name" /></p>
+        <p>IDManager: <input type="text" id="IDManager" /></p>
+        <p><input id="formSubmit" type="button" value="Create Contact" /></p>
+        <p>Result: <input type="text" id="debug"/></p>
+    </form>
+</body>
+</html>

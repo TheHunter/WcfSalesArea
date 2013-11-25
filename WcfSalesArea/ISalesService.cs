@@ -10,11 +10,16 @@ using WcfExtensions;
 
 namespace WcfSalesArea
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "WcfSalesArea")]
     [ServiceKnownType("GetKnownTypes", typeof(WcfServiceHolder))]
     public interface ISalesService
     {
-        //[OperationContract]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest), OperationContract]
+        //[WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json), OperationContract]
+        //[WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json), OperationContract]
+        Agency GetAgency(long id);
+
+
         [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest), OperationContract]
         IEnumerable<Salesman> GetSalesman(int pageIndex, int pageSize);
 

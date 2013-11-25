@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using PersistentLayer.Domain;
 using WcfJsonFormatter;
+using WcfJsonFormatter.Ns;
 
 namespace WcfSalesArea.Client
 {
@@ -39,7 +40,7 @@ namespace WcfSalesArea.Client
 
             using (SalesService proxy = new SalesService(webBinding, endpoint))
             {
-                proxy.Endpoint.Behaviors.Add(new WebHttpJsonBehavior());
+                proxy.Endpoint.Behaviors.Add(new WebHttpJsonNetBehavior());
 
                 try
                 {

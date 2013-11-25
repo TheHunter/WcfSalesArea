@@ -59,6 +59,9 @@
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
@@ -92,6 +95,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WcfConfigExtensions.1.0.0.0\lib\net40\WcfExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="WcfJsonFormatter, Version=1.1.1.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WcfJsonFormatter.1.1.1.10\lib\net40\WcfJsonFormatter.dll</HintPath>
+    </Reference>
+    <Reference Include="WcfJsonNetFormatter">
+      <HintPath>..\packages\WcfJsonNetFormatter.1.0.0.0\lib\net40\WcfJsonNetFormatter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="cfg\Configuration.xml" />
@@ -108,14 +118,9 @@
     <Content Include="hbm\SalesmanNQ.hbm.xml" />
     <Content Include="hbm\Student.hbm.xml" />
     <Content Include="hbm\TradeContract.hbm.xml" />
-    <Content Include="PersistentLayer.license.txt" />
-    <Content Include="PersistentLayer.readme.html" />
-    <Content Include="Release_3-4-4-15.txt" />
     <Content Include="rif\EntityModel.dll" />
     <Content Include="rif\EntityModel.xml" />
-    <Content Include="rif\Newtonsoft.Json.dll" />
     <Content Include="rif\PersistentLayer.Domain.dll" />
-    <Content Include="rif\WcfJsonFormatter.dll" />
     <Content Include="SalesService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -142,12 +147,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\WcfJsonFormatter\WcfJsonFormatter.net40\WcfJsonFormatter.net40.csproj">
-      <Project>{b8dffbe3-36aa-4aa4-881d-0f2ebf53094d}</Project>
-      <Name>WcfJsonFormatter.net40</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

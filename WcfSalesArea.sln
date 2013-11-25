@@ -12,10 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CB1AFE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfSalesArea.net40", "WcfSalesArea.net40\WcfSalesArea.net40.csproj", "{DBFDA64E-C076-4403-B82A-E3429DB10E96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfSalesArea.Client", "WcfSalesArea.Client\WcfSalesArea.Client.csproj", "{5DB66F67-7686-4915-BB67-623C204531C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfJsonFormatter.net40", "..\WcfJsonFormatter\WcfJsonFormatter.net40\WcfJsonFormatter.net40.csproj", "{B8DFFBE3-36AA-4AA4-881D-0F2EBF53094D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,14 +26,6 @@ Global
 		{DBFDA64E-C076-4403-B82A-E3429DB10E96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBFDA64E-C076-4403-B82A-E3429DB10E96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBFDA64E-C076-4403-B82A-E3429DB10E96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5DB66F67-7686-4915-BB67-623C204531C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DB66F67-7686-4915-BB67-623C204531C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DB66F67-7686-4915-BB67-623C204531C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DB66F67-7686-4915-BB67-623C204531C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8DFFBE3-36AA-4AA4-881D-0F2EBF53094D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8DFFBE3-36AA-4AA4-881D-0F2EBF53094D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8DFFBE3-36AA-4AA4-881D-0F2EBF53094D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8DFFBE3-36AA-4AA4-881D-0F2EBF53094D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
