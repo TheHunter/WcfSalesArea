@@ -14,7 +14,8 @@ namespace WcfSalesArea
     [ServiceKnownType("GetKnownTypes", typeof(WcfServiceHolder))]
     public interface ISalesService
     {
-        [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest), OperationContract]
+        [OperationContract]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, Method = "POST")]
         //[WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json), OperationContract]
         //[WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json), OperationContract]
         Agency GetAgency(long id);
@@ -26,5 +27,9 @@ namespace WcfSalesArea
         //[OperationContract]
         [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest), OperationContract]
         IEnumerable<TradeContract> GetContract(int pageIndex, int pageSize);
+
+        [OperationContract]
+        [WebGet(BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        Agency GetFisrtAgency();
     }
 }

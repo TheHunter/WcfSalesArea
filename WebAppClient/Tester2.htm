@@ -11,8 +11,12 @@
             $("#formSubmit").click(function () {
 
                 var urlAgency = "http://localhost:52696/SalesService.svc/json/GetAgency";
+                //var urlAgency = "http://localhost:52696/SalesService.svc/json/GetFisrtAgency";
                 var key = $("#key").val();
                 var input = JSON.stringify({ id: key });
+                var type = "POST";
+
+                //var input = JSON.stringify({});
 
                 //alert(input);
                 //dataType: "json",
@@ -20,12 +24,12 @@
                 //mimeType: "application/json; charset=utf-8",
 
                 $.ajax({
-                    type: "POST",
+                    type: type,
                     async: "false",
                     url: urlAgency,
                     data: input,
                     crossDomain: true,
-                    mimeType: "application/json; charset=utf-8",
+                    contentType: 'application/json; charset=utf-8',
                     dataType: "json",
                     success: function (result) {
                         $("#debug").val("Added a new contact with id = " + result.ID);
@@ -37,9 +41,10 @@
                     //    $("#debug").val("Failed: " + xhr.status + " - " + thrownError);
                     //},
 
-                    //beforeSend: function( xhr ) {
-                    //    xhr.overrideMimeType("application/json; charset=utf-8");
-                    //}
+                    beforeSend: function( xhr ) {
+                        //xhr.overrideMimeType("application/json; charset=utf-8");
+                        xhr.setRequestHeader('contentType', 'application/json; charset=utf-8');
+                    }
                 });
             });
         });

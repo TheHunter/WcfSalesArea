@@ -69,5 +69,14 @@ namespace WcfSalesArea
 
             return result.GetResult();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Agency GetFisrtAgency()
+        {
+            return this.customPagedDAO.FindBy<Agency, long>(1);
+        }
     }
 }
