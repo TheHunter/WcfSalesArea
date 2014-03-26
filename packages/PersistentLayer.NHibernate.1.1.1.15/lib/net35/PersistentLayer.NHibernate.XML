@@ -1,917 +1,9 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>PersistentLayer</name>
+        <name>PersistentLayer.NHibernate</name>
     </assembly>
     <members>
-        <member name="T:PersistentLayer.Exceptions.ContextRollbackException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.BusinessLayerException">
-            <summary>
-            Rappresents a generic exception when there's an error on managing the current Unit of Work.
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessLayerException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessLayerException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessLayerException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessLayerException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="P:PersistentLayer.Exceptions.BusinessLayerException.InvokerName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.ContextRollbackException.#ctor(System.String,PersistentLayer.NHibernate.ITransactionInfo)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="transactionInfo"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.ContextRollbackException.#ctor(System.String,System.Exception,PersistentLayer.NHibernate.ITransactionInfo)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="cause"></param>
-            <param name="transactionInfo"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.ContextRollbackException.#ctor(System.String,PersistentLayer.NHibernate.ITransactionInfo,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="transactionInfo"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.ContextRollbackException.#ctor(System.String,System.Exception,PersistentLayer.NHibernate.ITransactionInfo,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="cause"></param>
-            <param name="transactionInfo"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="P:PersistentLayer.Exceptions.ContextRollbackException.TransactionInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.Exceptions.ContextRollbackException.Cause">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.MissingPropertyException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.BusinessObjectException">
-            <summary>
-            Rappresents an generic error when business DAOs execute any kind of query on data store.
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessObjectException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessObjectException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.MissingPropertyException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="propertyName"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.MissingPropertyException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="propertyName"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="P:PersistentLayer.Exceptions.MissingPropertyException.PropertyName">
-            <summary>
-            The missing property.
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.IPagedDAO`2">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
-        </member>
-        <member name="T:PersistentLayer.IPersisterDAO`2">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
-        </member>
-        <member name="T:PersistentLayer.IQueryableDAO`2">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO`2.Exists(`1)">
-            <summary>
-            
-            </summary>
-            <param name="identifier"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO`2.Exists(System.Collections.Generic.IEnumerable{`1})">
-            <summary>
-            
-            </summary>
-            <param name="identifiers"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO`2.FindBy(`1)">
-            <summary>
-            
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO`2.FindAll">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO`2.FindAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
-            <summary>
-            
-            </summary>
-            <param name="where"></param>
-            <returns></returns>
-        </member>
-        <member name="T:PersistentLayer.ITransactionContext">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.ITransactionContext.GetTransactionProvider">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO`2.MakePersistent(`0)">
-            <summary>
-            Saves or updates the given instance, It depends upon the indentifier value.
-            </summary>
-            <param name="entity">the current instance which contains the state to persist.</param>
-            <returns>returns the current persistent instance.</returns>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO`2.MakePersistent(`0,`1)">
-            <summary>
-            Updates the persistent state associated with the given identifier.
-            </summary>
-            <param name="entity">the current instance which contains the state to persist.</param>
-            <param name="identifier">the persistent indentifier which be updated.</param>
-            <returns>returns the current persistent instance.</returns>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO`2.MakePersistent(System.Collections.Generic.IEnumerable{`0})">
-            <summary>
-            
-            </summary>
-            <param name="entities"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO`2.MakeTransient(`0)">
-            <summary>
-            
-            </summary>
-            <param name="entity"></param>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO`2.MakeTransient(System.Collections.Generic.IEnumerable{`0})">
-            <summary>
-            
-            </summary>
-            <param name="entities"></param>
-        </member>
-        <member name="M:PersistentLayer.IPagedDAO`2.GetPagedResult(System.Int32,System.Int32,System.Linq.IQueryable{`0})">
-            <summary>
-            
-            </summary>
-            <param name="startIndex"></param>
-            <param name="pageSize"></param>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IPagedDAO`2.GetIndexPagedResult(System.Int32,System.Int32,System.Linq.IQueryable{`0})">
-            <summary>
-            
-            </summary>
-            <param name="query"></param>
-            <param name="pageIndex"></param>
-            <param name="pageSize"></param>
-            <returns></returns>
-        </member>
-        <member name="T:PersistentLayer.IPagedDAO">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.IPersisterDAO">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.IQueryableDAO">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO.Exists``2(``1)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
-            <param name="identifier"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO.Exists``2(System.Collections.Generic.IEnumerable{``1})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
-            <param name="identifiers"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO.FindBy``2(``1)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO.FindAll``1">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IQueryableDAO.FindAll``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="where"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO.MakePersistent``1(``0)">
-            <summary>
-            Saves or updates the given instance, It depends upon the indentifier value.
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="entity">the current instance which contains the state to persist.</param>
-            <returns>returns the current persistent instance.</returns>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO.MakePersistent``2(``0,``1)">
-            <summary>
-            Updates the persistent state associated with the given identifier.
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
-            <param name="entity">the current instance which contains the state to persist.</param>
-            <param name="identifier">the persistent indentifier which be updated.</param>
-            <returns>returns the current persistent instance.</returns>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO.MakePersistent``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="entities"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO.MakeTransient``1(``0)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="entity"></param>
-        </member>
-        <member name="M:PersistentLayer.IPersisterDAO.MakeTransient``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="entities"></param>
-        </member>
-        <member name="M:PersistentLayer.IPagedDAO.GetPagedResult``1(System.Int32,System.Int32,System.Linq.IQueryable{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="startIndex"></param>
-            <param name="pageSize"></param>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.IPagedDAO.GetIndexPagedResult``1(System.Int32,System.Int32,System.Linq.IQueryable{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="pageIndex"></param>
-            <param name="pageSize"></param>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.Impl.AbstractDAO">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.ISessionContext">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.ISessionContext.SessionInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.Impl.AbstractDAO.GetTransactionProvider">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.Impl.AbstractDAO.SessionInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.Impl.AbstractDAO.CurrentSession">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.BusinessPersistentException">
-            <summary>
-            An exception which is thrown when a generic query is executed through DAO methods because of a failed persistent operation.
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.ExecutionQueryException">
-            <summary>
-            An exception which is thrown when a generic query is executed through DAO methods.
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.ExecutionQueryException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="methodInvoker"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.ExecutionQueryException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.ExecutionQueryException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="methodInvoker"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="P:PersistentLayer.Exceptions.ExecutionQueryException.MethodInvoker">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessPersistentException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="methodInvoker"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessPersistentException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.BusinessPersistentException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="methodInvoker"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.CommitFailedException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.CommitFailedException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.CommitFailedException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.CommitFailedException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.CommitFailedException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.InnerRollBackException">
-            <summary>
-            Indicates an error has occurred when an inner transaction has invoked a rollback method.
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.InnerRollBackException.#ctor(System.String,PersistentLayer.NHibernate.ITransactionInfo)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="transactionInfo"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.InnerRollBackException.#ctor(System.String,System.Exception,PersistentLayer.NHibernate.ITransactionInfo)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="cause"></param>
-            <param name="transactionInfo"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.InnerRollBackException.#ctor(System.String,PersistentLayer.NHibernate.ITransactionInfo,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="transactionInfo"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.InnerRollBackException.#ctor(System.String,System.Exception,PersistentLayer.NHibernate.ITransactionInfo,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="cause"></param>
-            <param name="transactionInfo"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.QueryArgumentException">
-            <summary>
-            An exception which is thrown when a generic query is executed through DAO methods because of an not valid argument
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.QueryArgumentException.#ctor(System.String,System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="methodInvoker"></param>
-            <param name="argumentName"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.QueryArgumentException.#ctor(System.String,System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="methodInvoker"></param>
-            <param name="argumentName"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="P:PersistentLayer.Exceptions.QueryArgumentException.ArgumentName">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.QueryFormatException">
-            <summary>
-            An exception which is thrown when a generic query is executed through DAO methods because of an not valid query syntax.
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.QueryFormatException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="methodInvoker"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.QueryFormatException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.QueryFormatException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="methodInvoker"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="T:PersistentLayer.Exceptions.RollbackFailedException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.RollbackFailedException.#ctor(System.String,PersistentLayer.NHibernate.ITransactionInfo)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="transactionInfo"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.RollbackFailedException.#ctor(System.String,System.Exception,PersistentLayer.NHibernate.ITransactionInfo)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="cause"></param>
-            <param name="transactionInfo"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.RollbackFailedException.#ctor(System.String,PersistentLayer.NHibernate.ITransactionInfo,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="transactionInfo"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.Exceptions.RollbackFailedException.#ctor(System.String,System.Exception,PersistentLayer.NHibernate.ITransactionInfo,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="cause"></param>
-            <param name="transactionInfo"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.InvalidSessionException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.InvalidSessionException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.InvalidSessionException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.InvalidSessionException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="exception"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.InvalidSessionException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-            <param name="exception"></param>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.IPersistentClassInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IPersistentClassInfo.GetMappedClass(NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IPersistentClassInfo.ExistsProperty(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IPersistentClassInfo.GetIdentifier(System.Object,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IPersistentClassInfo.SetIdentifier(System.Object,System.Object,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="id"></param>
-            <param name="mode"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IPersistentClassInfo.GetPropertyValue(System.Object,System.String,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="propertyName"></param>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IPersistentClassInfo.GetPropertyValues(System.Object,System.String[],NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="propertyNames"></param>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IPersistentClassInfo.SetPropertyValue(System.Object,System.String,System.Object,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="propertyName"></param>
-            <param name="value"></param>
-            <param name="mode"></param>
-            <exception cref="T:PersistentLayer.Exceptions.BusinessObjectException"></exception>
-            <exception cref="T:PersistentLayer.Exceptions.MissingPropertyException"></exception>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IPersistentClassInfo.SetPropertyValues(System.Object,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}},NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="values"></param>
-            <param name="mode"></param>
-            <exception cref="T:PersistentLayer.Exceptions.BusinessObjectException"></exception>
-            <exception cref="T:PersistentLayer.Exceptions.MissingPropertyException"></exception>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPersistentClassInfo.Identifier">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPersistentClassInfo.IsInherited">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPersistentClassInfo.HasProxy">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPersistentClassInfo.HasIdentifierProperty">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPersistentClassInfo.HasNaturalIdentifier">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPersistentClassInfo.HasSubclasses">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPersistentClassInfo.Properties">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.IPropertyInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.Name">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.TypeValue">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.IsMutable">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.IsAssociationType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.IsXMLElement">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.IsCollectionType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.IsComponentType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.IsEntityType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.IPropertyInfo.IsAnyType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.ISessionBinderProvider">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.ISessionProvider">
-            <summary>
-            Provides sessions by a higher implementation.
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.ITransactionProvider">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.ITransactionProvider.Exists(System.String)">
-            <summary>
-            Indicates if there's a transaction with the given name.
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.ITransactionProvider.BeginTransaction(System.Nullable{System.Data.IsolationLevel})">
-            <summary>
-            Begin a new transaction
-            </summary>
-            <param name="level"></param>
-            <exception cref="T:PersistentLayer.Exceptions.BusinessLayerException"></exception>
-        </member>
-        <member name="M:PersistentLayer.ITransactionProvider.BeginTransaction(System.String,System.Nullable{System.Data.IsolationLevel})">
-            <summary>
-            Begin a new transaction with the given name.
-            </summary>
-            <param name="name"></param>
-            <param name="level"></param>
-            <exception cref="T:PersistentLayer.Exceptions.BusinessLayerException"></exception>
-        </member>
-        <member name="M:PersistentLayer.ITransactionProvider.CommitTransaction">
-            <summary>
-            Commit the transaction.
-            </summary>
-            <returns></returns>
-            <exception cref="T:PersistentLayer.Exceptions.CommitFailedException">
-            Throws an exception when current transaction tries to commit.
-            </exception>
-        </member>
-        <member name="M:PersistentLayer.ITransactionProvider.RollbackTransaction">
-            <summary>
-            Makes a rollback the transaction.
-            </summary>
-            <exception cref="T:PersistentLayer.Exceptions.RollbackFailedException">
-            Throws an exception when current transaction makes a rollback.
-            </exception>
-            <exception cref="T:PersistentLayer.Exceptions.InnerRollBackException">
-            Throws an exception when an inner transaction makes a rollback.
-            </exception>
-        </member>
-        <member name="M:PersistentLayer.ITransactionProvider.RollbackTransaction(System.Exception)">
-            <summary>
-            Makes a rollback, indicating the exception associated to the last transaction.
-            </summary>
-            <param name="cause"></param>
-        </member>
-        <member name="P:PersistentLayer.ITransactionProvider.InProgress">
-            <summary>
-            Indicates if the root transaction is in progress.
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.ISessionProvider.GetCurrentSession">
-            <summary>
-            Gets the current bounded session by a higher implementation level.
-            </summary>
-            <returns>Returns the current binded session by a higher implementation level.</returns>
-            <exception cref="T:PersistentLayer.NHibernate.SessionNotBindedException">
-            Throws an exception when there's no session binded into any CurrentSessionContext.
-            </exception>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.ISessionBinderProvider.OpenSession">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.ISessionBinderProvider.BindSession(NHibernate.ISession,NHibernate.FlushMode)">
-            <summary>
-            
-            </summary>
-            <param name="session"></param>
-            <param name="mode"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.ISessionBinderProvider.HasSessionBinded">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.ISessionBinderProvider.UnbindSession">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:PersistentLayer.NHibernate.FutureQueryResolver">
             <summary>
             
@@ -975,333 +67,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.ISessionManager">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.ISessionManager.SessionFactory">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.ITransactionInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.ITransactionInfo.Index">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.ITransactionInfo.Name">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.PersistentClassInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.#ctor(NHibernate.Metadata.IClassMetadata)">
-            <summary>
-            
-            </summary>
-            <param name="metadata"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.GetMappedClass(NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.ExistsProperty(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.SetIdentifier(System.Object,System.Object,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="id"></param>
-            <param name="mode"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.GetIdentifier(System.Object,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.GetPropertyValue(System.Object,System.String,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="propertyName"></param>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.GetPropertyValues(System.Object,System.String[],NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="propertyNames"></param>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.SetPropertyValue(System.Object,System.String,System.Object,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="propertyName"></param>
-            <param name="value"></param>
-            <param name="mode"></param>
-            <exception cref="T:PersistentLayer.Exceptions.BusinessObjectException"></exception>
-            <exception cref="T:PersistentLayer.Exceptions.MissingPropertyException"></exception>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.SetPropertyValues(System.Object,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}},NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="values"></param>
-            <param name="mode"></param>
-            <exception cref="T:PersistentLayer.Exceptions.BusinessObjectException"></exception>
-            <exception cref="T:PersistentLayer.Exceptions.MissingPropertyException"></exception>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.SetProperty(System.Object,System.String,System.Object,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="propertyName"></param>
-            <param name="value"></param>
-            <param name="mode"></param>
-            <exception cref="T:PersistentLayer.Exceptions.MissingPropertyException"></exception>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PersistentClassInfo.GetProperty(System.Object,System.String,NHibernate.EntityMode)">
-            <summary>
-            
-            </summary>
-            <param name="instance"></param>
-            <param name="propertyName"></param>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PersistentClassInfo.Identifier">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PersistentClassInfo.IsInherited">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PersistentClassInfo.HasProxy">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PersistentClassInfo.HasIdentifierProperty">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PersistentClassInfo.HasNaturalIdentifier">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PersistentClassInfo.HasSubclasses">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PersistentClassInfo.Properties">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.PropertyMapInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PropertyMapInfo.#ctor(NHibernate.Type.IType,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="type"></param>
-            <param name="name"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PropertyMapInfo.Equals(System.Object)">
-            <summary>
-            
-            </summary>
-            <param name="obj"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PropertyMapInfo.GetHashCode">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.PropertyMapInfo.ToString">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.Name">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.TypeValue">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.IsMutable">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.IsAssociationType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.IsXMLElement">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.IsCollectionType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.IsComponentType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.IsEntityType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.PropertyMapInfo.IsAnyType">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.SessionNotAvailableException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotAvailableException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotAvailableException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotAvailableException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotAvailableException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.SessionNotBindedException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotBindedException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotBindedException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotBindedException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="exception"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotBindedException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="invokerName"></param>
-            <param name="exception"></param>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.SessionNotOpenedException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotOpenedException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotOpenedException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionNotOpenedException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-            <param name="invokerName"></param>
         </member>
         <member name="T:PersistentLayer.NHibernate.IDomainDAO">
             <summary>
@@ -1595,12 +360,36 @@
             <param name="entities"></param>
             <returns></returns>
         </member>
-        <member name="T:PersistentLayer.NHibernate.Impl.BusinessPagedDAO`2">
+        <member name="T:PersistentLayer.NHibernate.Impl.AbstractDAO">
             <summary>
             
             </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
+        </member>
+        <member name="T:PersistentLayer.NHibernate.ISessionContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PersistentLayer.NHibernate.ISessionContext.SessionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.AbstractDAO.GetTransactionProvider">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PersistentLayer.NHibernate.Impl.AbstractDAO.SessionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PersistentLayer.NHibernate.Impl.AbstractDAO.CurrentSession">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:PersistentLayer.NHibernate.Impl.BusinessDAO`2">
             <summary>
@@ -1723,6 +512,13 @@
             <param name="identifiers"></param>
             <returns></returns>
         </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EntityDAO`2.Exists(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
         <member name="M:PersistentLayer.NHibernate.Impl.EntityDAO`2.Exists(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
@@ -1831,6 +627,13 @@
             
             </summary>
         </member>
+        <member name="T:PersistentLayer.NHibernate.Impl.BusinessPagedDAO`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TKey"></typeparam>
+        </member>
         <member name="T:PersistentLayer.NHibernate.INhPagedDAO`2">
             <summary>
             
@@ -1898,13 +701,13 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.Impl.BusinessPagedDAO`2.GetPagedResult(System.Int32,System.Int32,System.Linq.IQueryable{`0})">
+        <member name="M:PersistentLayer.NHibernate.Impl.BusinessPagedDAO`2.GetPagedResult(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             
             </summary>
             <param name="startIndex"></param>
             <param name="pageSize"></param>
-            <param name="query"></param>
+            <param name="predicate"></param>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.Impl.BusinessPagedDAO`2.GetIndexPagedResult(System.Int32,System.Int32,NHibernate.Criterion.DetachedCriteria)">
@@ -1924,25 +727,6 @@
             <param name="pageSize"></param>
             <param name="query"></param>
             <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.Impl.BusinessPagedDAO`2.GetIndexPagedResult(System.Int32,System.Int32,System.Linq.IQueryable{`0})">
-            <summary>
-            
-            </summary>
-            <param name="pageIndex"></param>
-            <param name="pageSize"></param>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.Impl.EnterprisePagedDAO">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.Impl.EnterpriseDAO">
-            <summary>
-            
-            </summary>
         </member>
         <member name="T:PersistentLayer.NHibernate.Impl.DomainDAO">
             <summary>
@@ -2074,6 +858,14 @@
             <param name="identifiers"></param>
             <returns></returns>
         </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.DomainDAO.Exists``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
         <member name="M:PersistentLayer.NHibernate.Impl.DomainDAO.Exists(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
@@ -2177,6 +969,11 @@
             <param name="region"></param>
             <returns></returns>
         </member>
+        <member name="T:PersistentLayer.NHibernate.Impl.EnterpriseDAO">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:PersistentLayer.NHibernate.ISessionDAO">
             <summary>
             
@@ -2189,6 +986,11 @@
             <param name="sessionProvider"></param>
         </member>
         <member name="P:PersistentLayer.NHibernate.Impl.EnterpriseDAO.SessionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PersistentLayer.NHibernate.Impl.EnterprisePagedDAO">
             <summary>
             
             </summary>
@@ -2264,14 +1066,14 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.Impl.EnterprisePagedDAO.GetPagedResult``1(System.Int32,System.Int32,System.Linq.IQueryable{``0})">
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterprisePagedDAO.GetPagedResult``1(System.Int32,System.Int32,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
             <summary>
             
             </summary>
             <typeparam name="TEntity"></typeparam>
             <param name="startIndex"></param>
             <param name="pageSize"></param>
-            <param name="query"></param>
+            <param name="predicate"></param>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.Impl.EnterprisePagedDAO.GetIndexPagedResult``1(System.Int32,System.Int32,NHibernate.Criterion.DetachedCriteria)">
@@ -2294,16 +1096,6 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.Impl.EnterprisePagedDAO.GetIndexPagedResult``1(System.Int32,System.Int32,System.Linq.IQueryable{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="pageIndex"></param>
-            <param name="pageSize"></param>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
         <member name="T:PersistentLayer.NHibernate.Impl.NhPagedResult`1">
             <summary>
             
@@ -2314,32 +1106,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="T:PersistentLayer.IPagedResult">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.IPagedResult.StartIndex">
-            <summary>
-            The start index for taking instances for result paging.
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.IPagedResult.Size">
-            <summary>
-            The page size.
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.IPagedResult.Counter">
-            <summary>
-            returns the total row count of executed query.
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.IPagedResult.Result">
-            <summary>
-            return the result from paged result.
-            </summary>
-            <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.Impl.NhPagedResult.#ctor">
             <summary>
@@ -2376,18 +1142,6 @@
             
             </summary>
         </member>
-        <member name="T:PersistentLayer.IPagedResult`1">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-        </member>
-        <member name="M:PersistentLayer.IPagedResult`1.GetResult">
-            <summary>
-            returns a new typed iterator which contains instances of paged result.
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:PersistentLayer.NHibernate.Impl.NhPagedResult`1.#ctor(System.Int32,System.Int32,NHibernate.ICriteria)">
             <summary>
             
@@ -2413,28 +1167,6 @@
             
             </summary>
             <returns></returns>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.SessionInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.SessionInfo.#ctor(PersistentLayer.NHibernate.ISessionProvider)">
-            <summary>
-            
-            </summary>
-            <param name="provider"></param>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.SessionInfo.CurrentSession">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.SessionInfo.Provider">
-            <summary>
-            
-            </summary>
         </member>
         <member name="T:PersistentLayer.NHibernate.Impl.NhQueryExtensions">
             <summary>
@@ -3047,6 +1779,15 @@
             <exception cref="T:PersistentLayer.Exceptions.ExecutionQueryException"></exception>
             <returns></returns>
         </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.NhQueryImplementor.Exists``1(NHibernate.ISession,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="session"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
         <member name="M:PersistentLayer.NHibernate.Impl.NhQueryImplementor.Exists(NHibernate.ISession,NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
@@ -3283,6 +2024,93 @@
             <exception cref="T:System.TypeLoadException"></exception>
             <returns></returns>
         </member>
+        <member name="T:PersistentLayer.NHibernate.InvalidSessionException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.InvalidSessionException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.InvalidSessionException.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="invokerName"></param>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.InvalidSessionException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.InvalidSessionException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="invokerName"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="T:PersistentLayer.NHibernate.ISessionBinderProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PersistentLayer.NHibernate.ISessionProvider">
+            <summary>
+            Provides sessions by a higher implementation.
+            </summary>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ISessionProvider.GetCurrentSession">
+            <summary>
+            Gets the current bounded session by a higher implementation level.
+            </summary>
+            <returns>Returns the current binded session by a higher implementation level.</returns>
+            <exception cref="T:PersistentLayer.Exceptions.SessionNotBindedException">
+            Throws an exception when there's no session binded into any CurrentSessionContext.
+            </exception>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ISessionBinderProvider.OpenSession">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ISessionBinderProvider.BindSession(NHibernate.ISession,NHibernate.FlushMode)">
+            <summary>
+            
+            </summary>
+            <param name="session"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ISessionBinderProvider.HasSessionBinded">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ISessionBinderProvider.UnbindSession">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PersistentLayer.NHibernate.ISessionManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PersistentLayer.NHibernate.ISessionManager.SessionFactory">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:PersistentLayer.NHibernate.NhConfigurationBuilder">
             <summary>
             
@@ -3366,184 +2194,6 @@
             
             </summary>
         </member>
-        <member name="T:PersistentLayer.NHibernate.TransactionInfo">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.TransactionInfo.#ctor(System.String,System.Int32)">
-            <summary>
-            
-            </summary>
-            <param name="name"></param>
-            <param name="index"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.TransactionInfo.Equals(System.Object)">
-            <summary>
-            
-            </summary>
-            <param name="obj"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.TransactionInfo.GetHashCode">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.TransactionInfo.ToString">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.TransactionInfo.Index">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.TransactionInfo.Name">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.WCF.NhDispatchMessageInspector">
-            <summary>
-            Defines a base implementation for custom inspection or modification of inbound and outbound application messages in services applications.
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.NhDispatchMessageInspector.#ctor(NHibernate.ISessionFactory)">
-            <summary>
-            
-            </summary>
-            <param name="sessionFactory"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.NhDispatchMessageInspector.AfterReceiveRequest(System.ServiceModel.Channels.Message@,System.ServiceModel.IClientChannel,System.ServiceModel.InstanceContext)">
-            <summary>
-            
-            </summary>
-            <param name="request"></param>
-            <param name="channel"></param>
-            <param name="instanceContext"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.NhDispatchMessageInspector.BeforeSendReply(System.ServiceModel.Channels.Message@,System.Object)">
-            <summary>
-            
-            </summary>
-            <param name="reply"></param>
-            <param name="correlationState"></param>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.WCF.NhServiceBehaviorAttribute">
-            <summary>
-            Apply a new behavior into the calling service, adding a new IDispatchMessageInspector instance for binding / unbinding nhibernate sessions when an operation contract is called.
-            </summary>
-            <remarks>ciao</remarks>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.NhServiceBehaviorAttribute.#ctor(System.String,System.Type)">
-            <summary>
-            
-            </summary>
-            <param name="sessionFactoyProvider">A property name which returns a session factory for this object.</param>
-            <param name="provider"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.NhServiceBehaviorAttribute.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)">
-            <summary>
-            
-            </summary>
-            <param name="serviceDescription"></param>
-            <param name="serviceHostBase"></param>
-            <param name="endpoints"></param>
-            <param name="bindingParameters"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.NhServiceBehaviorAttribute.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
-            <summary>
-            
-            </summary>
-            <param name="serviceDescription"></param>
-            <param name="serviceHostBase"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.NhServiceBehaviorAttribute.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)">
-            <summary>
-            
-            </summary>
-            <param name="serviceDescription"></param>
-            <param name="serviceHostBase"></param>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.WCF.ServiceArgumentException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.WCF.WcfServiceException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.WcfServiceException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.WcfServiceException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.ServiceArgumentException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.ServiceArgumentException.#ctor(System.String,System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="parameter"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.ServiceArgumentException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.ServiceArgumentException.#ctor(System.String,System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="parameter"></param>
-            <param name="innerException"></param>
-        </member>
-        <member name="P:PersistentLayer.NHibernate.WCF.ServiceArgumentException.Parameter">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:PersistentLayer.NHibernate.WCF.ServiceBehaviorException">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.ServiceBehaviorException.#ctor(System.String)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.WCF.ServiceBehaviorException.#ctor(System.String,System.Exception)">
-            <summary>
-            
-            </summary>
-            <param name="message"></param>
-            <param name="innerException"></param>
-        </member>
         <member name="T:PersistentLayer.NHibernate.SessionBinderLayer`1">
             <summary>
             A session manager which gets binded and unbinded sessions.
@@ -3578,7 +2228,7 @@
             Gets the current binded session from the calling session manager.
             </summary>
             <returns>returns the current binded session</returns>
-            <exception cref="T:PersistentLayer.NHibernate.SessionNotBindedException">
+            <exception cref="T:PersistentLayer.Exceptions.SessionNotBindedException">
             Throws an exception when there's no session binded into any CurrentSessionContext.
             </exception>
         </member>
@@ -3589,13 +2239,24 @@
             <param name="name"></param>
             <returns></returns>
         </member>
+        <member name="M:PersistentLayer.NHibernate.SessionManager.BeginTransaction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.SessionManager.BeginTransaction(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
         <member name="M:PersistentLayer.NHibernate.SessionManager.BeginTransaction(System.Nullable{System.Data.IsolationLevel})">
             <summary>
             Begin a new transaction from the current binded session with the specified IsolationLevel.
             </summary>
             <param name="level">IsolationLevel for this transaction.</param>
             <exception cref="T:PersistentLayer.Exceptions.BusinessLayerException"></exception>
-            <exception cref="T:PersistentLayer.NHibernate.SessionNotBindedException">
+            <exception cref="T:PersistentLayer.Exceptions.SessionNotBindedException">
             Throws an exception when there's no session binded into any CurrentSessionContext.
             </exception>
         </member>
@@ -3657,7 +2318,7 @@
             <summary>
             
             </summary>
-            <exception cref="T:PersistentLayer.NHibernate.SessionNotOpenedException"></exception>
+            <exception cref="T:PersistentLayer.Exceptions.SessionNotOpenedException"></exception>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.SessionBinderLayer`1.BindSession(NHibernate.ISession,NHibernate.FlushMode)">
@@ -3666,7 +2327,7 @@
             </summary>
             <param name="session"></param>
             <param name="mode"></param>
-            <exception cref="T:PersistentLayer.NHibernate.SessionNotAvailableException"></exception>
+            <exception cref="T:PersistentLayer.Exceptions.SessionNotAvailableException"></exception>
             <exception cref="T:PersistentLayer.NHibernate.InvalidSessionException"></exception>
         </member>
         <member name="M:PersistentLayer.NHibernate.SessionBinderLayer`1.HasSessionBinded">
@@ -3680,6 +2341,69 @@
             
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:PersistentLayer.NHibernate.SessionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.SessionInfo.#ctor(PersistentLayer.NHibernate.ISessionProvider)">
+            <summary>
+            
+            </summary>
+            <param name="provider"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:PersistentLayer.NHibernate.SessionInfo.CurrentSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PersistentLayer.NHibernate.SessionInfo.Provider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:PersistentLayer.NHibernate.TransactionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.TransactionInfo.#ctor(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.TransactionInfo.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.TransactionInfo.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.TransactionInfo.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PersistentLayer.NHibernate.TransactionInfo.Index">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PersistentLayer.NHibernate.TransactionInfo.Name">
+            <summary>
+            
+            </summary>
         </member>
     </members>
 </doc>

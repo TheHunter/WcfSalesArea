@@ -56,7 +56,7 @@
     </Reference>
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+      <HintPath>..\packages\Iesi.Collections.3.2.0.1001\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -66,13 +66,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="PersistentLayer, Version=3.4.4.15, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="PersistentLayer, Version=4.2.2.10, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\PersistentLayer.3.4.4.15\lib\net40\PersistentLayer.dll</HintPath>
+      <HintPath>..\packages\PersistentLayer.4.2.2.10\lib\net40\PersistentLayer.dll</HintPath>
     </Reference>
     <Reference Include="PersistentLayer.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>rif\PersistentLayer.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="PersistentLayer.NHibernate">
+      <HintPath>..\packages\PersistentLayer.NHibernate.1.1.1.15\lib\net35\PersistentLayer.NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -118,6 +121,9 @@
     <Content Include="hbm\SalesmanNQ.hbm.xml" />
     <Content Include="hbm\Student.hbm.xml" />
     <Content Include="hbm\TradeContract.hbm.xml" />
+    <Content Include="PersistentLayer.license.txt" />
+    <Content Include="PersistentLayer.readme.html" />
+    <Content Include="Release_Notes.txt" />
     <Content Include="rif\EntityModel.dll" />
     <Content Include="rif\EntityModel.xml" />
     <Content Include="rif\PersistentLayer.Domain.dll" />

@@ -1,0 +1,18 @@
+Release notes:
+
+Implementation of interfaces IPagedDAO, and IPagedDAO<TEntity, TKey>:
+
+-	The follow methods were deprecated and removed from interfaces IPagedDAO, and IPagedDAO<TEntity, TKey>:	
+	-	IPagedResult<TEntity> GetPagedResult(int startIndex, int pageSize, IQueryable<TEntity> query);
+	-	IPagedResult<TEntity> GetIndexPagedResult(int pageIndex, int pageSize, IQueryable<TEntity> query);
+	
+New implementation for the following method:
+    -   bool Exists<TEntity>(Expression<Func<TEntity, bool>> predicate) where TEntity : class
+    
+    this method is defined on IQueryableDAO and IQueryableDAO<TEntity, TKey>.
+
+
+That's All.
+
+
+

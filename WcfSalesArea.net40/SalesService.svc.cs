@@ -12,7 +12,7 @@ using NHibernate.Impl;
 using PersistentLayer;
 using PersistentLayer.Domain;
 using PersistentLayer.NHibernate; 
-using PersistentLayer.NHibernate.WCF;
+//using PersistentLayer.NHibernate.WCF;
 using Autofac;
 using WcfExtensions;
 
