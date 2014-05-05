@@ -3,9 +3,7 @@
 <head>
     <title>My first page</title>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.js"></script>
-
     <script type="text/javascript" src="scripts/json2.js"></script>
-    
     <script type="text/javascript">
         $(function () {
             $("#formSubmit").click(function () {
@@ -27,10 +25,20 @@
                     crossDomain: true,
                     contentType: "application/json; charset=utf-8",
                     success: function (result) {
-                        $("#debug").val("Added a new contact with id = " + result.ID);
+                        if (result == null) {
+                            $("#debug").val("Nessun dato restituito.");
+                            $("#Name").val("");
+                            $("#IDManager").val("");
+                        } else {
+                            $("#debug").val("dati recuperati.");
+                            $("#Name").val(result.Name);
+                            $("#IDManager").val(result.IDManager);
+                        }
                     },
                     error: function (jqXHR) {
                         $("#debug").val("Error: " + jqXHR.responseText);
+                        $("#Name").val("");
+                        $("#IDManager").val("");
                     },
                     //error: function (xhr, ajaxOptions, thrownError) {
                     //    $("#debug").val("Failed: " + xhr.status + " - " + thrownError);
@@ -40,6 +48,7 @@
                     //    xhr.overrideMimeType("application/json; charset=utf-8");
                     //}
                 });
+                
             });
         });
     </script>
@@ -52,7 +61,7 @@
         <p>Identifier: <input type="text" id="key" /></p>
         <p>Name: <input type="text" id="Name" /></p>
         <p>IDManager: <input type="text" id="IDManager" /></p>
-        <p><input id="formSubmit" type="button" value="Create Contact" /></p>
+        <p><input id="formSubmit" type="button" value="Recupera dati" /></p>
         <p>Result: <input type="text" id="debug"/></p>
     </form>
 </body>

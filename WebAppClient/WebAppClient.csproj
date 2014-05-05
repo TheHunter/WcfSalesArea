@@ -59,7 +59,7 @@
   <ItemGroup>
     <Content Include="scripts\json2.js" />
     <Content Include="Tester.html" />
-    <Content Include="Tester2.htm" />
+    <Content Include="Tester2.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

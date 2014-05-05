@@ -1,22 +1,17 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
+<head>
     <title>My second page</title>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.js"></script>
-
     <script type="text/javascript" src="scripts/json2.js"></script>
-    
     <script type="text/javascript">
         $(function () {
             $("#formSubmit").click(function () {
 
                 var urlAgency = "http://localhost:52696/SalesService.svc/json/GetAgency";
-                //var urlAgency = "http://localhost:52696/SalesService.svc/json/GetFisrtAgency";
                 var key = $("#key").val();
                 var input = JSON.stringify({ id: key });
-                var type = "POST";
-
-                //var input = JSON.stringify({});
 
                 //alert(input);
                 //dataType: "json",
@@ -24,13 +19,12 @@
                 //mimeType: "application/json; charset=utf-8",
 
                 $.ajax({
-                    type: type,
+                    type: "POST",
                     async: "false",
                     url: urlAgency,
                     data: input,
                     crossDomain: true,
-                    contentType: 'application/json; charset=utf-8',
-                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
                     success: function (result) {
                         $("#debug").val("Added a new contact with id = " + result.ID);
                     },
@@ -41,11 +35,11 @@
                     //    $("#debug").val("Failed: " + xhr.status + " - " + thrownError);
                     //},
 
-                    beforeSend: function( xhr ) {
-                        //xhr.overrideMimeType("application/json; charset=utf-8");
-                        xhr.setRequestHeader('contentType', 'application/json; charset=utf-8');
-                    }
+                    //beforeSend: function( xhr ) {
+                    //    xhr.overrideMimeType("application/json; charset=utf-8");
+                    //}
                 });
+
             });
         });
     </script>
