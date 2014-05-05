@@ -10,17 +10,14 @@ using NHibernate.Criterion;
 using NHibernate.Impl;
 using PersistentLayer;
 using PersistentLayer.Domain;
-using PersistentLayer.NHibernate; 
-using PersistentLayer.NHibernate.WCF;
+using PersistentLayer.NHibernate;
 using Autofac;
 
 namespace WcfSalesArea
 {
-    [NhServiceBehavior("DefaultSessionFactory", typeof(WcfServiceHolder))]
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
     public class SalesService : ISalesService
     {
-
         private readonly INhPagedDAO customPagedDAO;
 
         /// <summary>
@@ -30,6 +27,12 @@ namespace WcfSalesArea
         public SalesService(INhPagedDAO customPagedDAO)
         {
             this.customPagedDAO = customPagedDAO;
+        }
+
+
+        public Agency GetAgency(long id)
+        {
+            return this.customPagedDAO.FindBy<Agency, long>(id);
         }
 
         /// <summary>
@@ -44,7 +47,6 @@ namespace WcfSalesArea
                              .GetIndexPagedResult<Salesman>(pageIndex, pageSize, DetachedCriteria.For<Salesman>());
 
             return result.GetResult();
-            
         }
 
         /// <summary>
@@ -60,6 +62,15 @@ namespace WcfSalesArea
                                                                  DetachedCriteria.For<TradeContract>());
 
             return result.GetResult();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Agency GetFisrtAgency()
+        {
+            return this.customPagedDAO.FindBy<Agency, long>(1);
         }
     }
 }

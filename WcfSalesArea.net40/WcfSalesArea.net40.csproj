@@ -66,16 +66,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="PersistentLayer, Version=4.2.2.10, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="PersistentLayer, Version=5.2.2.12, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\PersistentLayer.4.2.2.10\lib\net40\PersistentLayer.dll</HintPath>
+      <HintPath>..\packages\PersistentLayer.5.2.2.12\lib\net40\PersistentLayer.dll</HintPath>
     </Reference>
     <Reference Include="PersistentLayer.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>rif\PersistentLayer.Domain.dll</HintPath>
     </Reference>
-    <Reference Include="PersistentLayer.NHibernate">
-      <HintPath>..\packages\PersistentLayer.NHibernate.1.1.1.15\lib\net35\PersistentLayer.NHibernate.dll</HintPath>
+    <Reference Include="PersistentLayer.NHibernate, Version=2.3.10.30, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PersistentLayer.NHibernate.2.3.10.30\lib\net35\PersistentLayer.NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -124,6 +125,7 @@
     <Content Include="PersistentLayer.license.txt" />
     <Content Include="PersistentLayer.readme.html" />
     <Content Include="Release_Notes.txt" />
+    <Content Include="Release_Notes_2.3.10.30.txt" />
     <Content Include="rif\EntityModel.dll" />
     <Content Include="rif\EntityModel.xml" />
     <Content Include="rif\PersistentLayer.Domain.dll" />
@@ -133,15 +135,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\WcfSalesArea\ISalesService.cs">
-      <Link>ISalesService.cs</Link>
-    </Compile>
-    <Compile Include="..\WcfSalesArea\WcfServiceHolder.cs">
-      <Link>WcfServiceHolder.cs</Link>
-    </Compile>
+    <Compile Include="ISalesService.cs" />
     <Compile Include="SalesService.svc.cs">
       <DependentUpon>SalesService.svc</DependentUpon>
     </Compile>
+    <Compile Include="WcfServiceHolder.cs" />
     <Content Include="App_Code\AppStart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

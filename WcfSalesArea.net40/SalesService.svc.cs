@@ -18,7 +18,7 @@ using WcfExtensions;
 
 namespace WcfSalesArea
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
     [AspNetCompatibilityRequirements(RequirementsMode =
         AspNetCompatibilityRequirementsMode.Allowed)]
     public class SalesService : ISalesService

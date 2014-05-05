@@ -54,26 +54,28 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>rif\EntityModel.dll</HintPath>
     </Reference>
-    <Reference Include="FluentNHibernate">
-      <HintPath>..\packages\FluentNHibernate.1.3.0.733\lib\FluentNHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="Iesi.Collections">
-      <HintPath>..\packages\Iesi.Collections.3.3.3.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.3.2.0.1001\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>rif\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="PersistentLayer, Version=3.3.3.15, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\PersistentLayer.3.3.3.15\lib\net35\PersistentLayer.dll</HintPath>
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PersistentLayer, Version=5.2.2.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PersistentLayer.5.2.2.12\lib\net35\PersistentLayer.dll</HintPath>
     </Reference>
     <Reference Include="PersistentLayer.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>rif\PersistentLayer.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="PersistentLayer.NHibernate">
+      <HintPath>..\packages\PersistentLayer.NHibernate.2.3.10.30\lib\net35\PersistentLayer.NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -91,6 +93,9 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WcfExtensions">
+      <HintPath>..\packages\WcfConfigExtensions.1.0.0.0\lib\net35\WcfExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="WcfJsonFormatter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>rif\WcfJsonFormatter.dll</HintPath>
@@ -113,7 +118,8 @@
     <Content Include="hbm\TradeContract.hbm.xml" />
     <Content Include="PersistentLayer.license.txt" />
     <Content Include="PersistentLayer.readme.html" />
-    <Content Include="Release_3-3-3-15.txt" />
+    <Content Include="Release_Notes.txt" />
+    <Content Include="Release_Notes_2.3.10.30.txt" />
     <Content Include="rif\EntityModel.dll" />
     <Content Include="rif\Newtonsoft.Json.dll" />
     <Content Include="rif\PersistentLayer.Domain.dll" />

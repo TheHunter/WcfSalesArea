@@ -1,0 +1,25 @@
+Release notes:
+- New interface named ISessionContextProvider which extends ISessionProvider
+
+- New implementations of ISessionProvider as:
+    - SessionContextProvider (implements ISessionContextProvider)
+    - SessionCacheProvider (extends SessionContextProvider)
+
+- New factory class named DaoFactoryTest, used by creating DAOs with contextual session providers.
+
+
+The reason for developing SessionContextProvider is that applications doesn't need anymore to use CurrentSessionContext class for making bind and unbind operations,
+because the session that needs this new implementation is supplied by an external method (delegate), which It will return a new session.
+
+NOTA: if the session supplied by the delegate (indicated in argument of SessionContextProvider constructor) returne no new session, It will throw an exception,
+because the session wiìhich be managed by this implementation will be contextual.
+
+The SessionCacheProvider is similar to base class ( SessionContextProvider ), but It's able to cache (into local member) the session, which It could be reused on another business logic request,
+and It's able to create new sessions after commit or rollback actions (It will depend of your custom parameter of constructor).
+
+
+
+That's All.
+
+
+
