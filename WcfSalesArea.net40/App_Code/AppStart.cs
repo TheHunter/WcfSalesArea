@@ -29,11 +29,27 @@ namespace WcfSalesArea
             ContainerBuilder builder = new ContainerBuilder();
             builder.RegisterType<SalesService>();
 
-            builder.Register(n => new EnterprisePagedDAO(new SessionManager(WcfServiceHolder.DefaultSessionFactory)))
-                .As<INhPagedDAO>()
+            //builder.Register(n => new EnterprisePagedDAO(new SessionManager(WcfServiceHolder.DefaultSessionFactory)))
+            //    .As<INhPagedDAO>()
+            //    .SingleInstance()
+            //    ;
+
+            //builder.Register(n => new SalesService(n.Resolve<INhPagedDAO>()))
+            //    .As<ISalesService>();
+
+
+            builder.Register(context => WcfServiceHolder.DefaultSessionFactory)
+                .As<ISessionFactory>()
                 .SingleInstance();
 
-            builder.Register(n => new SalesService(n.Resolve<INhPagedDAO>()))
+            builder.Register(
+                context =>
+                new EnterprisePagedDAO(new SessionContextProvider(context.Resolve<ISessionFactory>().OpenSession))
+                )
+                .As<INhPagedDAO>()
+                ;
+
+            builder.RegisterType<SalesService>()
                 .As<ISalesService>();
 
             AutofacHostFactory.Container = builder.Build();
