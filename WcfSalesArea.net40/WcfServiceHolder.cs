@@ -77,10 +77,29 @@ namespace WcfSalesArea
         /// </summary>
         public static void BindSession()
         {
-            lock (Sessionfactory)
+            //lock (Sessionfactory)
+            //{
+            //    ISession session = Sessionfactory.OpenSession();
+            //    CurrentSessionContext.Bind(session);
+            //}
+
+            //HttpContext.Current.Response.AddHeader("Content-Type",
+            //              "application/json; charset=utf-8");
+
+            //HttpContext.Current.Request.Headers.Add("Content-Type", "application/json; charset=utf-8");
+
+            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin",
+                          "http://localhost:9261");
+
+            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
             {
-                ISession session = Sessionfactory.OpenSession();
-                CurrentSessionContext.Bind(session);
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods",
+                              "GET, POST");
+                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers",
+                              "Content-Type, Accept");
+                HttpContext.Current.Response.AddHeader("Access-Control-Max-Age",
+                              "1728000");
+                HttpContext.Current.Response.End();
             }
         }
 
@@ -89,12 +108,13 @@ namespace WcfSalesArea
         /// </summary>
         public static void UnbindSession()
         {
-            lock (Sessionfactory)
-            {
-                ISession session = CurrentSessionContext.Unbind(Sessionfactory);
-                if (session != null && session.IsOpen)
-                    session.Close();
-            }
+            //lock (Sessionfactory)
+            //{
+            //    ISession session = CurrentSessionContext.Unbind(Sessionfactory);
+            //    if (session != null && session.IsOpen)
+            //        session.Close();
+            //}
+
         }
 
     }

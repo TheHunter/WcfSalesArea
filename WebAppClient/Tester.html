@@ -15,15 +15,14 @@
                 //alert(input);
                 //dataType: "json",
                 //contentType: "application/json; charset=utf-8",
-                //mimeType: "application/json; charset=utf-8",
+                ////mimeType: "application/json; charset=utf-8",
 
                 $.ajax({
+                    cache: false,
                     type: "POST",
-                    async: "false",
+                    async: false,
                     url: urlAgency,
                     data: input,
-                    crossDomain: true,
-                    contentType: "application/json; charset=utf-8",
                     success: function (result) {
                         if (result == null) {
                             $("#debug").val("Nessun dato restituito.");
