@@ -83,24 +83,21 @@ namespace WcfSalesArea
             //    CurrentSessionContext.Bind(session);
             //}
 
-            //HttpContext.Current.Response.AddHeader("Content-Type",
-            //              "application/json; charset=utf-8");
+            
 
-            //HttpContext.Current.Request.Headers.Add("Content-Type", "application/json; charset=utf-8");
+            //HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin",
+            //              "http://localhost:9261");
 
-            HttpContext.Current.Response.AddHeader("Access-Control-Allow-Origin",
-                          "http://localhost:9261");
-
-            if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
-            {
-                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods",
-                              "GET, POST");
-                HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers",
-                              "Content-Type, Accept");
-                HttpContext.Current.Response.AddHeader("Access-Control-Max-Age",
-                              "1728000");
-                HttpContext.Current.Response.End();
-            }
+            //if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+            //{
+            //    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Methods",
+            //                  "GET, POST");
+            //    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers",
+            //                  "Content-Type, Accept");
+            //    HttpContext.Current.Response.AddHeader("Access-Control-Max-Age",
+            //                  "1728000");
+            //    HttpContext.Current.Response.End();
+            //}
         }
 
         /// <summary>
