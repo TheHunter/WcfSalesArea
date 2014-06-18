@@ -181,6 +181,165 @@
             </summary>
             <param name="mode"></param>
             <param name="region"></param>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},NHibernate.CacheMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},NHibernate.CacheMode,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.FindBy``2(``1,NHibernate.LockMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="identifier"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.FindAll``1(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="cacheable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.FindAll``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="cacheRegion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.FindAll``1(System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="fetchSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.FindAll``1(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.FindAll``1(NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.FindAllFuture``1(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.FindAllFuture``1(NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.GetFutureValue``1(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TFutureValue"></typeparam>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.GetFutureValue``2(NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TFutureValue"></typeparam>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.Exists(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.Exists``1(NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.RefreshState``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.RefreshState``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.UniqueResult``1(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO.UniqueResult``1(NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
             <returns></returns>
         </member>
         <member name="T:PersistentLayer.NHibernate.ISessionContext">
@@ -192,119 +351,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.FindBy``2(``1,NHibernate.LockMode)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TKey"></typeparam>
-            <param name="identifier"></param>
-            <param name="mode"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.FindAll``1(System.Boolean)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="cacheable"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.FindAll``1(System.String)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="cacheRegion"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.FindAll``1(System.Int32)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="fetchSize"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.FindAll``1(NHibernate.Criterion.DetachedCriteria)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="criteria"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.FindAll``1(NHibernate.Criterion.QueryOver{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.FindAllFuture``1(NHibernate.Criterion.DetachedCriteria)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="criteria"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.FindAllFuture``1(NHibernate.Criterion.QueryOver{``0})">
-            <summary>
-            
-            </summary>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.GetFutureValue``1(NHibernate.Criterion.DetachedCriteria)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TFutureValue"></typeparam>
-            <param name="criteria"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.GetFutureValue``2(NHibernate.Criterion.QueryOver{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <typeparam name="TFutureValue"></typeparam>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.Exists(NHibernate.Criterion.DetachedCriteria)">
-            <summary>
-            
-            </summary>
-            <param name="criteria"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.Exists``1(NHibernate.Criterion.QueryOver{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="query"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.RefreshState``1(``0)">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="entity"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PersistentLayer.NHibernate.IDomainDAO.RefreshState``1(System.Collections.Generic.IEnumerable{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="entities"></param>
-            <returns></returns>
         </member>
         <member name="T:PersistentLayer.NHibernate.IEntityDAO`2">
             <summary>
@@ -346,7 +392,35 @@
             <param name="region"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.FindBy(`1,NHibernate.LockMode)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`0},``0}},NHibernate.CacheMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`0},``0}},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`0},``0}},NHibernate.CacheMode,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.FindBy(`1,NHibernate.LockMode)">
             <summary>
             Finds the object which matches with the given key.
             </summary>
@@ -354,56 +428,56 @@
             <param name="mode">The type of locking for the instance to get, this argument can be null.</param>
             <returns>return an instance related to the calling type object.</returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.FindAll(System.Boolean)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.FindAll(System.Boolean)">
             <summary>
             gets all instances from data source, and cache the query.
             </summary>
             <param name="cacheable">specify if cache will be switch on.</param>
             <returns>a set of instances from database.</returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.FindAll(System.String)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.FindAll(System.String)">
             <summary>
             
             </summary>
             <param name="cacheRegion"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.FindAll(System.Int32)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.FindAll(System.Int32)">
             <summary>
             sets the pre loaded of istances from the database.
             </summary>
             <param name="fetchSize"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.FindAll(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.FindAll(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.FindAll(NHibernate.Criterion.QueryOver{`0})">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.FindAll(NHibernate.Criterion.QueryOver{`0})">
             <summary>
             
             </summary>
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.FindAllFuture(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.FindAllFuture(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.FindAllFuture(NHibernate.Criterion.QueryOver{`0})">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.FindAllFuture(NHibernate.Criterion.QueryOver{`0})">
             <summary>
             
             </summary>
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.GetFutureValue``1(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.GetFutureValue``1(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
@@ -411,7 +485,7 @@
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.GetFutureValue``1(NHibernate.Criterion.QueryOver{`0})">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.GetFutureValue``1(NHibernate.Criterion.QueryOver{`0})">
             <summary>
             
             </summary>
@@ -419,32 +493,46 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.Exists(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.Exists(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.Exists(NHibernate.Criterion.QueryOver{`0})">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.Exists(NHibernate.Criterion.QueryOver{`0})">
             <summary>
             
             </summary>
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.RefreshState(`0)">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.RefreshState(`0)">
             <summary>
             
             </summary>
             <param name="entity"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.IEntityDAO`2.RefreshState(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.RefreshState(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             
             </summary>
             <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.UniqueResult(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhQueryableDAO`2.UniqueResult(NHibernate.Criterion.QueryOver{`0})">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
             <returns></returns>
         </member>
         <member name="T:PersistentLayer.NHibernate.Impl.SessionCacheProvider">
@@ -745,7 +833,35 @@
             <param name="region"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.FindBy(System.Object,NHibernate.LockMode)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`1},``0}},NHibernate.CacheMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`1},``0}},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`1},``0}},NHibernate.CacheMode,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.FindBy(System.Object,NHibernate.LockMode)">
             <summary>
             Finds the object which matches with the given key.
             </summary>
@@ -753,56 +869,56 @@
             <param name="mode">The type of locking for the instance to get, this argument can be null.</param>
             <returns>return an instance related to the calling type object.</returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.FindAll(System.Boolean)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.FindAll(System.Boolean)">
             <summary>
             gets all instances from data source, and cache the query.
             </summary>
             <param name="cacheable">specify if cache will be switch on.</param>
             <returns>a set of instances from database.</returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.FindAll(System.String)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.FindAll(System.String)">
             <summary>
             
             </summary>
             <param name="cacheRegion"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.FindAll(System.Int32)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.FindAll(System.Int32)">
             <summary>
             sets the pre loaded of istances from the database.
             </summary>
             <param name="fetchSize"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.FindAll(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.FindAll(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.FindAll(NHibernate.Criterion.QueryOver{`1})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.FindAll(NHibernate.Criterion.QueryOver{`1})">
             <summary>
             
             </summary>
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.FindAllFuture(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.FindAllFuture(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.FindAllFuture(NHibernate.Criterion.QueryOver{`1})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.FindAllFuture(NHibernate.Criterion.QueryOver{`1})">
             <summary>
             
             </summary>
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.GetFutureValue``1(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.GetFutureValue``1(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
@@ -810,7 +926,7 @@
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.GetFutureValue``1(NHibernate.Criterion.QueryOver{`1})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.GetFutureValue``1(NHibernate.Criterion.QueryOver{`1})">
             <summary>
             
             </summary>
@@ -818,32 +934,46 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.Exists(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.Exists(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.Exists(NHibernate.Criterion.QueryOver{`1})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.Exists(NHibernate.Criterion.QueryOver{`1})">
             <summary>
             
             </summary>
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.RefreshState(`1)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.RefreshState(`1)">
             <summary>
             
             </summary>
             <param name="entity"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`2.RefreshState(System.Collections.Generic.IEnumerable{`1})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.RefreshState(System.Collections.Generic.IEnumerable{`1})">
             <summary>
             
             </summary>
             <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.UniqueResult(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`2.UniqueResult(NHibernate.Criterion.QueryOver{`1})">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.INhRootPagedDAO`2.GetPagedResult(System.Int32,System.Int32,NHibernate.Criterion.DetachedCriteria)">
@@ -1109,6 +1239,63 @@
             <param name="entities"></param>
             <returns></returns>
         </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`2.UniqueResult(System.Linq.Expressions.Expression{System.Func{`1,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`2.UniqueResult(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`2.UniqueResult(NHibernate.Criterion.QueryOver{`1})">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`1},``0}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`1},``0}},NHibernate.CacheMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`1},``0}},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`1},``0}},NHibernate.CacheMode,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
         <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`2.ToIQueryable">
             <summary>
             
@@ -1188,7 +1375,38 @@
             <param name="region"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.FindBy``1(System.Object,NHibernate.LockMode)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},NHibernate.CacheMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},NHibernate.CacheMode,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.FindBy``1(System.Object,NHibernate.LockMode)">
             <summary>
             
             </summary>
@@ -1197,7 +1415,7 @@
             <param name="mode"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.FindAll``1(System.Boolean)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.FindAll``1(System.Boolean)">
             <summary>
             
             </summary>
@@ -1205,7 +1423,7 @@
             <param name="cacheable"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.FindAll``1(System.String)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.FindAll``1(System.String)">
             <summary>
             
             </summary>
@@ -1213,7 +1431,7 @@
             <param name="cacheRegion"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.FindAll``1(System.Int32)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.FindAll``1(System.Int32)">
             <summary>
             
             </summary>
@@ -1221,7 +1439,7 @@
             <param name="fetchSize"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.FindAll``1(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.FindAll``1(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
@@ -1229,7 +1447,7 @@
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.FindAll``1(NHibernate.Criterion.QueryOver{``0})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.FindAll``1(NHibernate.Criterion.QueryOver{``0})">
             <summary>
             
             </summary>
@@ -1237,7 +1455,7 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.FindAllFuture``1(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.FindAllFuture``1(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
@@ -1245,14 +1463,14 @@
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.FindAllFuture``1(NHibernate.Criterion.QueryOver{``0})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.FindAllFuture``1(NHibernate.Criterion.QueryOver{``0})">
             <summary>
             
             </summary>
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.GetFutureValue``1(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.GetFutureValue``1(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
@@ -1260,7 +1478,7 @@
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.GetFutureValue``2(NHibernate.Criterion.QueryOver{``0})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.GetFutureValue``2(NHibernate.Criterion.QueryOver{``0})">
             <summary>
             
             </summary>
@@ -1269,14 +1487,14 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.Exists(NHibernate.Criterion.DetachedCriteria)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.Exists(NHibernate.Criterion.DetachedCriteria)">
             <summary>
             
             </summary>
             <param name="criteria"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.Exists``1(NHibernate.Criterion.QueryOver{``0})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.Exists``1(NHibernate.Criterion.QueryOver{``0})">
             <summary>
             
             </summary>
@@ -1284,7 +1502,7 @@
             <param name="query"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.RefreshState``1(``0)">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.RefreshState``1(``0)">
             <summary>
             
             </summary>
@@ -1292,12 +1510,28 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
-        <member name="M:PersistentLayer.NHibernate.INhRootHybridDAO`1.RefreshState``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.RefreshState``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             
             </summary>
             <typeparam name="TEntity"></typeparam>
             <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.UniqueResult``1(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.INhRootQueryableDAO`1.UniqueResult``1(NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.INhRootPagedDAO`1.GetPagedResult``1(System.Int32,System.Int32,NHibernate.Criterion.DetachedCriteria)">
@@ -1595,6 +1829,69 @@
             <param name="entities"></param>
             <returns></returns>
         </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`1.UniqueResult``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`1.UniqueResult``1(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`1.UniqueResult``1(NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`1.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`1.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},NHibernate.CacheMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`1.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`1.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},NHibernate.CacheMode,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
         <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseRootDAO`1.ToIQueryable``1">
             <summary>
             
@@ -1672,7 +1969,7 @@
             <summary>
             
             </summary>
-            <param name="where"></param>
+            <param name="predicate"></param>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.FindAll(System.Boolean)">
@@ -1821,6 +2118,63 @@
             
             </summary>
             <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.UniqueResult(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.UniqueResult(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.UniqueResult(NHibernate.Criterion.QueryOver{`0})">
+            <summary>
+            
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`0},``0}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`0},``0}},NHibernate.CacheMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`0},``0}},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.ExecuteExpression``1(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{`0},``0}},NHibernate.CacheMode,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.Impl.BusinessDAO`2.ToIQueryable">
@@ -2158,6 +2512,70 @@
             </summary>
             <typeparam name="TEntity"></typeparam>
             <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseDAO.UniqueResult``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseDAO.UniqueResult``1(NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseDAO.UniqueResult``1(NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseDAO.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseDAO.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},NHibernate.CacheMode)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseDAO.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseDAO.ExecuteExpression``2(System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},NHibernate.CacheMode,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.Impl.EnterpriseDAO.ToIQueryable``1">
@@ -3088,6 +3506,18 @@
             <param name="region"></param>
             <returns></returns>
         </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.NhQueryImplementor.ExecuteExpression``2(NHibernate.ISession,System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``0},``1}},System.Nullable{NHibernate.CacheMode},System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="session"></param>
+            <param name="queryExpr"></param>
+            <param name="mode"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
         <member name="M:PersistentLayer.NHibernate.Impl.NhQueryImplementor.MakePersistent``1(NHibernate.ISession,``0)">
             <summary>
             
@@ -3253,6 +3683,33 @@
             <param name="query"></param>
             <param name="pageIndex"></param>
             <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.NhQueryImplementor.UniqueResult``1(NHibernate.ISession,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="session"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.NhQueryImplementor.UniqueResult``1(NHibernate.ISession,NHibernate.Criterion.DetachedCriteria)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="session"></param>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.Impl.NhQueryImplementor.UniqueResult``1(NHibernate.ISession,NHibernate.Criterion.QueryOver{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <param name="session"></param>
+            <param name="criteria"></param>
             <returns></returns>
         </member>
         <member name="M:PersistentLayer.NHibernate.Impl.NhQueryImplementor.GetIdentifierName``1(NHibernate.ISession)">
@@ -3466,6 +3923,79 @@
             <summary>
             
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:PersistentLayer.NHibernate.ReflectionExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.IsFloatingNumericType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.IsNullable(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.IsReferenceType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.IsAnonymous(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.IsNumeric(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.IsNullableNumericType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.Implements(System.Type,System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.Implements(System.Type,System.Type)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.IsNullableValueType(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PersistentLayer.NHibernate.ReflectionExtension.ToListEnumerableDelegate(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="resultType"></param>
             <returns></returns>
         </member>
         <member name="T:PersistentLayer.NHibernate.SessionInfo">

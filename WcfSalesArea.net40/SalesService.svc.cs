@@ -7,6 +7,7 @@ using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 using Autofac.Integration.Wcf;
+using EntityModel;
 using NHibernate.Criterion;
 using NHibernate.Impl;
 using PersistentLayer;
@@ -24,13 +25,13 @@ namespace WcfSalesArea
     public class SalesService : ISalesService
     {
 
-        private readonly INhPagedDAO customPagedDAO;
+        private readonly INhRootPagedDAO<IEntity> customPagedDAO;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="customPagedDAO"></param>
-        public SalesService(INhPagedDAO customPagedDAO)
+        public SalesService(INhRootPagedDAO<IEntity> customPagedDAO)
         {
             this.customPagedDAO = customPagedDAO;
         }
@@ -38,7 +39,7 @@ namespace WcfSalesArea
         
         public Agency GetAgency(long id)
         {
-            return this.customPagedDAO.FindBy<Agency, long>(id);
+            return this.customPagedDAO.FindBy<Agency>(id);
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace WcfSalesArea
         /// <returns></returns>
         public Agency GetFisrtAgency()
         {
-            return this.customPagedDAO.FindBy<Agency, long>(1);
+            return this.customPagedDAO.FindBy<Agency>(1);
         }
     }
 }

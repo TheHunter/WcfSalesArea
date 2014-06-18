@@ -1,0 +1,13 @@
+Release notes:
+- New implementation of PersistentLayer (version 5.3.3.12), so new members implemented (named UniqueResult and ExecuteExpression).
+
+- New specific methods named UniqueResult & ExecuteExpression, with another parameters used by Nhibernate.
+
+- All ToIQueryable<TEntity> methods were deprecated, so now It's possible to use ExecuteExpression method in order to use LinqToNh,
+  however the deprecated methods are kept in this release, but in the next one they will be removed.
+  
+
+That's All.
+
+
+

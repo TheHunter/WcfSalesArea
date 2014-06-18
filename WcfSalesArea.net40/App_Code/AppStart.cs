@@ -9,6 +9,7 @@ using System.Xml;
 using Autofac;
 using Autofac.Builder;
 using Autofac.Integration.Wcf;
+using EntityModel;
 using NHibernate;
 using PersistentLayer;
 using PersistentLayer.Domain;
@@ -29,25 +30,18 @@ namespace WcfSalesArea
             ContainerBuilder builder = new ContainerBuilder();
             builder.RegisterType<SalesService>();
 
-            //builder.Register(n => new EnterprisePagedDAO(new SessionManager(WcfServiceHolder.DefaultSessionFactory)))
-            //    .As<INhPagedDAO>()
-            //    .SingleInstance()
-            //    ;
-
-            //builder.Register(n => new SalesService(n.Resolve<INhPagedDAO>()))
-            //    .As<ISalesService>();
-
-
             builder.Register(context => WcfServiceHolder.DefaultSessionFactory)
                 .As<ISessionFactory>()
                 .SingleInstance();
 
-            builder.Register(
-                context =>
-                new EnterprisePagedDAO(new SessionContextProvider(context.Resolve<ISessionFactory>().OpenSession))
-                )
-                .As<INhPagedDAO>()
-                ;
+            builder.Register<Func<ISession>>(context => context.Resolve<ISessionFactory>().OpenSession)
+                   .AsSelf();
+
+            builder.Register(context => new SessionContextProvider(context.Resolve<Func<ISession>>()))
+                   .As<ISessionContextProvider>();
+
+            builder.Register(context => new EnterpriseRootDAO<IEntity>(context.Resolve<ISessionContextProvider>()))
+                   .As<INhRootPagedDAO<IEntity>>();
 
             builder.RegisterType<SalesService>()
                 .As<ISalesService>();
