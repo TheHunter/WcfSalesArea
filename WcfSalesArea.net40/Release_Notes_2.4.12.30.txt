@@ -1,0 +1,10 @@
+Release notes:
+
+- All ExecuteExpression methods changed their signature, because the first argument was IEnumerable<T>, now they're IQueryable<T> type.
+- All ExecuteExpression methods were fixed, the problem was expressions were executed in memory instead of on data store side.
+
+
+That's All.
+
+
+

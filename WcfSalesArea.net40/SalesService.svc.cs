@@ -77,7 +77,7 @@ namespace WcfSalesArea
         /// <returns></returns>
         public Agency GetFisrtAgency()
         {
-            return this.customPagedDAO.FindBy<Agency>(1);
+            return this.customPagedDAO.FindBy<Agency>(1L);
         }
     }
 }
