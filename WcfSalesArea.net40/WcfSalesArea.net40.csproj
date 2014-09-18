@@ -58,7 +58,7 @@
       <HintPath>..\packages\Iesi.Collections.3.2.0.1001\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
@@ -94,16 +94,14 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="WcfExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WcfConfigExtensions.1.0.0.0\lib\net40\WcfExtensions.dll</HintPath>
+    <Reference Include="WcfExtensions">
+      <HintPath>..\packages\WcfConfigExtensions.1.0.0.10\lib\net40\WcfExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="WcfJsonFormatter, Version=1.1.1.10, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WcfJsonFormatter.1.1.1.10\lib\net40\WcfJsonFormatter.dll</HintPath>
+    <Reference Include="WcfJsonFormatter">
+      <HintPath>..\packages\WcfJsonFormatter.1.1.2.10\lib\net40\WcfJsonFormatter.dll</HintPath>
     </Reference>
     <Reference Include="WcfJsonNetFormatter">
-      <HintPath>..\packages\WcfJsonNetFormatter.1.0.0.0\lib\net40\WcfJsonNetFormatter.dll</HintPath>
+      <HintPath>..\packages\WcfJsonNetFormatter.1.0.0.5\lib\net40\WcfJsonNetFormatter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
