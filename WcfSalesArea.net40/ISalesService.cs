@@ -6,7 +6,6 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using PersistentLayer.Domain;
-using WcfExtensions;
 
 namespace WcfSalesArea
 {

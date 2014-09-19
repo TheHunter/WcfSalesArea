@@ -33,7 +33,8 @@ namespace WcfSalesArea
         {
             ContainerBuilder builder = new ContainerBuilder();
 
-            DefaultBehaviorExtensionElement<WebHttpJsonNetBehavior> a;
+            Type t = typeof (DefaultBehaviorExtensionElement<WebHttpJsonNetBehavior>);
+            Console.WriteLine(t.FullName);
 
 
             builder.Register(context => WcfServiceHolder.DefaultSessionFactory)

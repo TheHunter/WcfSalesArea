@@ -92,7 +92,8 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="WcfExtensions">
+    <Reference Include="WcfExtensions, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WcfConfigExtensions.1.0.0.10\lib\net35\WcfExtensions.dll</HintPath>
     </Reference>
     <Reference Include="WcfJsonFormatter">
@@ -141,7 +142,6 @@
     <Compile Include="ISalesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
