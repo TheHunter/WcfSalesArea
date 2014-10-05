@@ -79,5 +79,23 @@ namespace WcfSalesArea
         {
             return this.customPagedDAO.FindBy<Agency>(1L);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void SaveAgency(Agency instance)
+        {
+            var tran = this.customPagedDAO.GetTransactionProvider();
+            try
+            {
+                tran.BeginTransaction();
+                this.customPagedDAO.MakePersistent(instance);
+                tran.CommitTransaction();
+            }
+            catch (Exception ex)
+            {
+                tran.RollbackTransaction(ex);
+            }
+        }
     }
 }

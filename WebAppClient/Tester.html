@@ -47,8 +47,38 @@
                     //    xhr.overrideMimeType("application/json; charset=utf-8");
                     //}
                 });
-                
             });
+
+            $("#btnInsert").click(function() {
+
+                var url = "http://localhost:52696/SalesService.svc/json/SaveAgency";
+                var ins = {
+                    instance: {
+                        Name: $("#Name").val(),
+                        IDManager: $("#IDManager").val()
+                    }
+                };
+                
+                var input = JSON.stringify(ins);
+
+                $.ajax({
+                    cache: false,
+                    type: "POST",
+                    async: false,
+                    url: url,
+                    data: input,
+                    success: function (result) {
+                        $("#debug").val("FATTO !!!.");
+                    },
+                    error: function (jqXHR) {
+                        //$("#debug").val("Error: " + jqXHR.responseText);
+                        //$("#Name").val("");
+                        //$("#IDManager").val("");
+                    },
+                });
+
+            });
+
         });
     </script>
 
@@ -61,6 +91,7 @@
         <p>Name: <input type="text" id="Name" /></p>
         <p>IDManager: <input type="text" id="IDManager" /></p>
         <p><input id="formSubmit" type="button" value="Recupera dati" /></p>
+        <p><input id="btnInsert" type="button" value="Inserisci dati" /></p>
         <p>Result: <input type="text" id="debug"/></p>
     </form>
 </body>

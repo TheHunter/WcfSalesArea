@@ -30,5 +30,9 @@ namespace WcfSalesArea
         [OperationContract]
         [WebGet(BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         Agency GetFisrtAgency();
+
+        [OperationContract]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, Method = "POST")]
+        void SaveAgency(Agency instance);
     }
 }
