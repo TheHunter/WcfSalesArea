@@ -28,8 +28,9 @@ namespace WcfSalesArea
         IEnumerable<TradeContract> GetContract(int pageIndex, int pageSize);
 
         [OperationContract]
-        [WebGet(BodyStyle = WebMessageBodyStyle.WrappedRequest)]
-        Agency GetFisrtAgency();
+        //[WebGet(BodyStyle = WebMessageBodyStyle.WrappedRequest)]
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, Method = "GET")]
+        Agency GetFirstAgency();
 
         [OperationContract]
         [WebInvoke(BodyStyle = WebMessageBodyStyle.WrappedRequest, Method = "POST")]

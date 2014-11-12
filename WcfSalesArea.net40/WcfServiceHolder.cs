@@ -26,6 +26,9 @@ namespace WcfSalesArea
         {
             string rootPath = HostingEnvironment.MapPath("~");
 
+            if (!rootPath.EndsWith("\\"))
+                rootPath = rootPath + "\\";
+
             XmlTextReader configReader = new XmlTextReader(File.OpenRead(string.Format("{0}/cfg/Configuration.xml", rootPath)));
             DirectoryInfo dir = new DirectoryInfo(string.Format("{0}/hbm", rootPath));
             NhConfigurationBuilder bld = new NhConfigurationBuilder(configReader, dir);

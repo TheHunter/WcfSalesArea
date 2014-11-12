@@ -23,6 +23,9 @@
                     async: false,
                     url: urlAgency,
                     data: input,
+                    //xhrFields: {
+                    //    withCredentials: true
+                    //},
                     success: function (result) {
                         if (result == null) {
                             $("#debug").val("Nessun dato restituito.");
@@ -35,9 +38,10 @@
                         }
                     },
                     error: function (jqXHR) {
-                        $("#debug").val("Error: " + jqXHR.responseText);
-                        $("#Name").val("");
-                        $("#IDManager").val("");
+                        alert(jqXHR);
+                        //$("#debug").val("Error: " + jqXHR.responseText);
+                        //$("#Name").val("");
+                        //$("#IDManager").val("");
                     },
                     //error: function (xhr, ajaxOptions, thrownError) {
                     //    $("#debug").val("Failed: " + xhr.status + " - " + thrownError);

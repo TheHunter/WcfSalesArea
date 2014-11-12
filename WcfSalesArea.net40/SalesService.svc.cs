@@ -13,7 +13,6 @@ using NHibernate.Impl;
 using PersistentLayer;
 using PersistentLayer.Domain;
 using PersistentLayer.NHibernate; 
-//using PersistentLayer.NHibernate.WCF;
 using Autofac;
 using WcfExtensions;
 
@@ -75,7 +74,7 @@ namespace WcfSalesArea
         /// 
         /// </summary>
         /// <returns></returns>
-        public Agency GetFisrtAgency()
+        public Agency GetFirstAgency()
         {
             return this.customPagedDAO.FindBy<Agency>(1L);
         }
