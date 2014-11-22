@@ -167,6 +167,31 @@
             <param name="str"></param>
             <returns></returns>
         </member>
+        <member name="M:WcfJsonFormatter.Ns.JsonFormatterUtility.MakeSettings(Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            
+            </summary>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WcfJsonFormatter.Ns.JsonQueryStringConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WcfJsonFormatter.Ns.JsonQueryStringConverter.#ctor(Newtonsoft.Json.JsonSerializer,WcfJsonFormatter.IServiceRegister)">
+            <summary>
+            
+            </summary>
+            <param name="serializer"></param>
+            <param name="serviceRegister"></param>
+        </member>
+        <member name="M:WcfJsonFormatter.Ns.JsonQueryStringConverter.CanConvert(System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WcfJsonFormatter.Ns.JsonQueryStringConverter.ConvertStringToValue(System.String,System.Type)">
+            <inheritdoc/>
+        </member>
         <member name="T:WcfJsonFormatter.Ns.JsonReaderConverter">
             <summary>
             
@@ -227,27 +252,26 @@
             
             </summary>
         </member>
-        <member name="M:WcfJsonFormatter.Ns.WebHttpJsonNetBehavior.#ctor(System.Collections.Generic.IEnumerable{System.Type})">
+        <member name="M:WcfJsonFormatter.Ns.WebHttpJsonNetBehavior.#ctor(System.Collections.Generic.IEnumerable{System.Type},System.Boolean)">
             <summary>
             
             </summary>
             <param name="knownTypes"></param>
+            <param name="enableUriTemplate"></param>
         </member>
         <member name="M:WcfJsonFormatter.Ns.WebHttpJsonNetBehavior.MakeDispatchMessageFormatter(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Description.ServiceEndpoint)">
-            <summary>
-            
-            </summary>
-            <param name="operationDescription"></param>
-            <param name="endpoint"></param>
-            <returns></returns>
+            <inheritdoc/>
         </member>
         <member name="M:WcfJsonFormatter.Ns.WebHttpJsonNetBehavior.MakeClientMessageFormatter(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Description.ServiceEndpoint)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WcfJsonFormatter.Ns.WebHttpJsonNetBehavior.GetQueryStringConverter(System.ServiceModel.Description.OperationDescription)">
+            <inheritdoc/>
+        </member>
+        <member name="P:WcfJsonFormatter.Ns.WebHttpJsonNetBehavior.Serializer">
             <summary>
             
             </summary>
-            <param name="operationDescription"></param>
-            <param name="endpoint"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>
