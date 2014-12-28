@@ -18,7 +18,7 @@
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -94,14 +94,17 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="WcfExtensions">
-      <HintPath>..\packages\WcfConfigExtensions.1.0.0.10\lib\net40\WcfExtensions.dll</HintPath>
+    <Reference Include="WcfExtensions, Version=1.1.1.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WcfConfigExtensions.1.1.1.10\lib\net40\WcfExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="WcfJsonFormatter">
+    <Reference Include="WcfJsonFormatter, Version=1.2.2.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WcfJsonFormatter.1.2.2.10\lib\net40\WcfJsonFormatter.dll</HintPath>
     </Reference>
-    <Reference Include="WcfJsonNetFormatter">
-      <HintPath>..\packages\WcfJsonNetFormatter.1.1.0.5\lib\net40\WcfJsonNetFormatter.dll</HintPath>
+    <Reference Include="WcfJsonNetFormatter, Version=1.1.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WcfJsonNetFormatter.1.2.4.5\lib\net40\WcfJsonNetFormatter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

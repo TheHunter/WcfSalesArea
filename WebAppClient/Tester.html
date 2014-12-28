@@ -9,6 +9,8 @@
             $("#formSubmit").click(function () {
 
                 var urlAgency = "http://localhost:52696/SalesService.svc/json/GetAgency";
+                //var urlAgency = "http://localhost/wcfsalesarea/SalesService.svc/json/GetAgency";
+                //var urlAgency = "https://localhost/wcfsalesarea/SalesService.svc/jsontr/GetAgency";
                 var key = $("#key").val();
                 var input = JSON.stringify({ id: key });
 
@@ -16,16 +18,17 @@
                 //dataType: "json",
                 //contentType: "application/json; charset=utf-8",
                 ////mimeType: "application/json; charset=utf-8",
+                //username: "myhome\\diego",
+                //password: "latinboy1984",
 
                 $.ajax({
                     cache: false,
                     type: "POST",
                     async: false,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
                     url: urlAgency,
                     data: input,
-                    //xhrFields: {
-                    //    withCredentials: true
-                    //},
                     success: function (result) {
                         if (result == null) {
                             $("#debug").val("Nessun dato restituito.");
